@@ -1,6 +1,5 @@
 "use client";
 import ColorSchemeContext from "@/contexts/ColorSchemeContext";
-import Link from "next/link";
 import { useContext, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa6";
 import { GiJapan, GiVampireDracula, GiYinYang } from "react-icons/gi";
