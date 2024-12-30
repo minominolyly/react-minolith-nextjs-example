@@ -1,0 +1,1 @@
+# react-minolith-nextjs-example
