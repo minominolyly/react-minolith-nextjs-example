@@ -1,5 +1,6 @@
 import CommonLayout from "@/layouts/CommonLayout";
 import { Metadata } from "next";
+import Link from "next/link";
 import {
   Accordion,
   AccordionDetails,
@@ -22,6 +23,7 @@ import {
   DialogueName,
   Div,
   Gingham,
+  Link as MinolithLink,
   Message,
   MessageBody,
   MessageHeader,
@@ -55,6 +57,9 @@ export default function Home() {
     <CommonLayout>
       <Container>
         <Div spacing={{ padding: 1 }}>
+          <MinolithLink as={Link} href="/hello-world">{"Hello World"}</MinolithLink>
+        </Div>
+        <Div spacing={{ padding: 1 }}>
           {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
           }
@@ -66,7 +71,7 @@ export default function Home() {
             </AccordionSummary>
             <AccordionDetails>
               <Div spacing={{ padding: 1 }}>
-                <Columns gutter={"1rem"}>
+                <Columns gutter={1}>
                   <Column>
                     <Badge>{"Badge"}</Badge>
                   </Column>
@@ -106,7 +111,7 @@ export default function Home() {
             </AccordionSummary>
             <AccordionDetails>
               <Div spacing={{ padding: 1 }}>
-                <Columns gutter={"1rem"}>
+                <Columns gutter={1}>
                   <Column>
                     <Button>{"Button"}</Button>
                   </Column>
