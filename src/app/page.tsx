@@ -1,3 +1,4 @@
+import CurrentTheme from "@/components/CurrentTheme";
 import CommonLayout from "@/layouts/CommonLayout";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -29,6 +30,7 @@ import {
   MessageHeader,
   Ruby,
   Stripe,
+  Section,
 } from "react-minolith";
 
 const TITLE = "react-minolith-nextjs-example";
@@ -56,6 +58,9 @@ export default function Home() {
   return (
     <CommonLayout>
       <Container>
+        <Section spacing={{ padding: 1 }}>
+          <CurrentTheme />
+        </Section>
         <Div spacing={{ padding: 1 }}>
           <MinolithLink as={Link} href="/hello-world">{"Hello World"}</MinolithLink>
         </Div>

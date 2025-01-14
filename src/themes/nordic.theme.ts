@@ -3,72 +3,73 @@ import ColorInfo from "@/models/ColorInfo";
 import minolithThemeUtility from "@/utilities/minolithThemeUtility";
 import { MinolithCssVariable } from "react-minolith";
 
-const colorChromaGray = 0.05;
-const colorChromaColorful = 0.2;
+const colorChromaGray = 0.02;
+const colorChromaColorful = 0.12;
 
-const colorLightness50 = 59;
-const colorLightnessOffsetLighter = 4.5;
-const colorLightnessOffsetDarker = 4.5;
+const colorLightness50 = 53;
+const colorLightnessOffsetLighter = 3.5;
+const colorLightnessOffsetDarker = 3.5;
+
+const defaultForeLight = "rgb(76, 86, 106)";
+const defaultBackLight = "rgb(242, 244, 248)";
+const defaultForeDark = "rgb(236, 239, 244)";
+const defaultBackDark = "rgb(46, 52, 64)";
 
 const colorGray: ColorInfo = {
   name: "gray",
-  // hue: 90,
-  hue: 219.82,
+  hue: 264.22,
   chroma: colorChromaGray,
 };
 
 const colorRed: ColorInfo = {
   name: "red",
-  hue: 27.12,
+  hue: 15.35,
   chroma: colorChromaColorful,
 };
 
 const colorOrange: ColorInfo = {
   name: "orange",
-  hue: 39.5,
+  hue: 38.24,
   chroma: colorChromaColorful,
 };
 
 const colorYellow: ColorInfo = {
   name: "yellow",
-  hue: 85.71,
+  hue: 84.07,
   chroma: colorChromaColorful,
 };
 
 const colorGreen: ColorInfo = {
   name: "green",
-  hue: 118.58,
+  hue: 131.04,
   chroma: colorChromaColorful,
 };
 
 const colorCyan: ColorInfo = {
   name: "cyan",
-  hue: 187.38,
+  hue: 212.85,
   chroma: colorChromaColorful,
 };
 
 const colorBlue: ColorInfo = {
   name: "blue",
-  hue: 244.93,
+  hue: 239.68,
   chroma: colorChromaColorful,
 };
 
 const colorViolet: ColorInfo = {
   name: "violet",
-  hue: 279.11,
+  hue: 311.66,
   chroma: colorChromaColorful,
 };
 
 const colorMagenta: ColorInfo = {
   name: "magenta",
-  hue: 355.9,
+  hue: 332.69,
   chroma: colorChromaColorful,
 };
 
-const defaultForeLight = "#002b36";
-const defaultForeDark = "#fdf6e3";
-
-const solarThemeConfig: MinolithCssVariable = {
+const nordicThemeConfig: MinolithCssVariable = {
   color: {
     gray: minolithThemeUtility.getColorVar(
       colorGray,
@@ -128,7 +129,7 @@ const solarThemeConfig: MinolithCssVariable = {
       default: {
         default: {
           fore: defaultForeLight,
-          back: defaultForeDark,
+          back: defaultBackLight,
         },
       },
       components: {
@@ -136,6 +137,7 @@ const solarThemeConfig: MinolithCssVariable = {
           default: {
             default: {
               fore: defaultForeLight,
+              back: defaultBackLight,
             },
           },
         },
@@ -215,7 +217,7 @@ const solarThemeConfig: MinolithCssVariable = {
       default: {
         default: {
           fore: defaultForeDark,
-          back: defaultForeLight,
+          back: defaultBackDark,
         },
       },
       components: {
@@ -223,6 +225,7 @@ const solarThemeConfig: MinolithCssVariable = {
           default: {
             default: {
               fore: defaultForeDark,
+              back: defaultBackDark,
             },
           },
           accordionSummary: {
@@ -321,4 +324,4 @@ const solarThemeConfig: MinolithCssVariable = {
   },
 };
 
-export default solarThemeConfig;
+export default nordicThemeConfig;

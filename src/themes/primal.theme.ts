@@ -3,72 +3,74 @@ import ColorInfo from "@/models/ColorInfo";
 import minolithThemeUtility from "@/utilities/minolithThemeUtility";
 import { MinolithCssVariable } from "react-minolith";
 
-const colorChromaGray = 0.05;
-const colorChromaColorful = 0.2;
+const colorChromaGray = 0.01;
+const colorChromaColorful = 0.15;
 
-const colorLightness50 = 59;
-const colorLightnessOffsetLighter = 4.5;
-const colorLightnessOffsetDarker = 4.5;
+const colorLightness50 = 53;
+const colorLightnessOffsetLighter = 3.5;
+const colorLightnessOffsetDarker = 3.5;
+
+
+const defaultForeLight = "hsla(36, 32%, 30%, 1)";
+const defaultBackLight = "hsla(36, 38%, 98%, 1)";
+const defaultForeDark = "hsla(34, 39%, 74%, 1)";
+const defaultBackDark = "hsla(32, 21%, 8%, 1)";
 
 const colorGray: ColorInfo = {
   name: "gray",
-  // hue: 90,
-  hue: 219.82,
+  hue: 70.81,
   chroma: colorChromaGray,
 };
 
 const colorRed: ColorInfo = {
   name: "red",
-  hue: 27.12,
+  hue: 28.26,
   chroma: colorChromaColorful,
 };
 
 const colorOrange: ColorInfo = {
   name: "orange",
-  hue: 39.5,
+  hue: 46.88,
   chroma: colorChromaColorful,
 };
 
 const colorYellow: ColorInfo = {
   name: "yellow",
-  hue: 85.71,
+  hue: 85.69,
   chroma: colorChromaColorful,
 };
 
 const colorGreen: ColorInfo = {
   name: "green",
-  hue: 118.58,
+  hue: 156.17,
   chroma: colorChromaColorful,
 };
 
 const colorCyan: ColorInfo = {
   name: "cyan",
-  hue: 187.38,
+  hue: 212.85,
   chroma: colorChromaColorful,
 };
 
 const colorBlue: ColorInfo = {
   name: "blue",
-  hue: 244.93,
+  hue: 239.68,
   chroma: colorChromaColorful,
 };
 
 const colorViolet: ColorInfo = {
   name: "violet",
-  hue: 279.11,
+  hue: 311.66,
   chroma: colorChromaColorful,
 };
 
 const colorMagenta: ColorInfo = {
   name: "magenta",
-  hue: 355.9,
+  hue: 346.82,
   chroma: colorChromaColorful,
 };
 
-const defaultForeLight = "#002b36";
-const defaultForeDark = "#fdf6e3";
-
-const solarThemeConfig: MinolithCssVariable = {
+const primalThemeConfig: MinolithCssVariable = {
   color: {
     gray: minolithThemeUtility.getColorVar(
       colorGray,
@@ -128,7 +130,7 @@ const solarThemeConfig: MinolithCssVariable = {
       default: {
         default: {
           fore: defaultForeLight,
-          back: defaultForeDark,
+          back: defaultBackLight,
         },
       },
       components: {
@@ -136,6 +138,20 @@ const solarThemeConfig: MinolithCssVariable = {
           default: {
             default: {
               fore: defaultForeLight,
+            },
+          },
+          accordionSummary: {
+            default: {
+              default: {
+                fore: defaultForeLight,
+              },
+            },
+          },
+          accordionDetails: {
+            default: {
+              default: {
+                fore: defaultForeLight,
+              },
             },
           },
         },
@@ -215,7 +231,7 @@ const solarThemeConfig: MinolithCssVariable = {
       default: {
         default: {
           fore: defaultForeDark,
-          back: defaultForeLight,
+          back: defaultBackDark,
         },
       },
       components: {
@@ -223,6 +239,7 @@ const solarThemeConfig: MinolithCssVariable = {
           default: {
             default: {
               fore: defaultForeDark,
+              back: defaultBackDark,
             },
           },
           accordionSummary: {
@@ -321,4 +338,4 @@ const solarThemeConfig: MinolithCssVariable = {
   },
 };
 
-export default solarThemeConfig;
+export default primalThemeConfig;

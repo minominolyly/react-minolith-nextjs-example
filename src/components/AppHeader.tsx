@@ -1,7 +1,8 @@
 "use client";
 import ColorSchemeContext from "@/contexts/ColorSchemeContext";
+import ColorTheme from "@/types/ColorTheme";
 import { useContext, useState } from "react";
-import { FaMoon, FaSun } from "react-icons/fa6";
+import { FaBook, FaMoon, FaSun } from "react-icons/fa6";
 import { GiJapan, GiVampireDracula, GiYinYang } from "react-icons/gi";
 import { LuCircleDashed } from "react-icons/lu";
 import {
@@ -25,7 +26,7 @@ export default function AppHeader(props: AppHeaderProps) {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const navMenuItems = (
     <>
-      <NavMenuItem as={MinolithLink} onClick={() => props.changeTheme("")}>
+      <NavMenuItem as={MinolithLink} onClick={() => props.changeTheme("default")}>
         <LuCircleDashed />
         {"Change theme to Default"}
       </NavMenuItem>
@@ -36,6 +37,20 @@ export default function AppHeader(props: AppHeaderProps) {
       <NavMenuItem as={MinolithLink} onClick={() => props.changeTheme("solar")}>
         <GiYinYang />
         {"Change theme to Solar"}
+      </NavMenuItem>
+      <NavMenuItem
+        as={MinolithLink}
+        onClick={() => props.changeTheme("primal")}
+      >
+        <FaBook />
+        {"Change theme to Primal"}
+      </NavMenuItem>
+      <NavMenuItem
+        as={MinolithLink}
+        onClick={() => props.changeTheme("nordic")}
+      >
+        <FaBook />
+        {"Change theme to Nordic"}
       </NavMenuItem>
       <NavMenuItem
         as={MinolithLink}
@@ -87,5 +102,5 @@ export default function AppHeader(props: AppHeaderProps) {
 
 interface AppHeaderProps {
   switchColorScheme: (colorScheme: ColorScheme) => void;
-  changeTheme: (theme: string) => void;
+  changeTheme: (theme: ColorTheme) => void;
 }
