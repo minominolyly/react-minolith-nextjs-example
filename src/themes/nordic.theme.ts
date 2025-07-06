@@ -27,6 +27,12 @@ const colorRed: ColorInfo = {
   chroma: colorChromaColorful,
 };
 
+const colorCoral: ColorInfo = {
+  name: "coral",
+  hue: 25.35,
+  chroma: colorChromaColorful,
+};
+
 const colorOrange: ColorInfo = {
   name: "orange",
   hue: 38.24,
@@ -36,6 +42,12 @@ const colorOrange: ColorInfo = {
 const colorYellow: ColorInfo = {
   name: "yellow",
   hue: 84.07,
+  chroma: colorChromaColorful,
+};
+
+const colorLime: ColorInfo = {
+  name: "lime",
+  hue: 110.07,
   chroma: colorChromaColorful,
 };
 
@@ -83,6 +95,12 @@ const nordicThemeConfig: MinolithCssVariable = {
       colorLightnessOffsetLighter,
       colorLightnessOffsetDarker
     ),
+    coral: minolithThemeUtility.getColorVar(
+      colorCoral,
+      colorLightness50,
+      colorLightnessOffsetLighter,
+      colorLightnessOffsetDarker
+    ),
     orange: minolithThemeUtility.getColorVar(
       colorOrange,
       colorLightness50,
@@ -91,6 +109,12 @@ const nordicThemeConfig: MinolithCssVariable = {
     ),
     yellow: minolithThemeUtility.getColorVar(
       colorYellow,
+      colorLightness50,
+      colorLightnessOffsetLighter,
+      colorLightnessOffsetDarker
+    ),
+    lime: minolithThemeUtility.getColorVar(
+      colorLime,
       colorLightness50,
       colorLightnessOffsetLighter,
       colorLightnessOffsetDarker

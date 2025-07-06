@@ -22,6 +22,12 @@ const colorRed: ColorInfo = {
   chroma: colorChromaColorful,
 };
 
+const colorCoral: ColorInfo = {
+  name: "coral",
+  hue: 45.49,
+  chroma: colorChromaColorful,
+};
+
 const colorOrange: ColorInfo = {
   name: "orange",
   hue: 66.55,
@@ -31,6 +37,12 @@ const colorOrange: ColorInfo = {
 const colorYellow: ColorInfo = {
   name: "yellow",
   hue: 112.74,
+  chroma: colorChromaColorful,
+};
+
+const colorLime: ColorInfo = {
+  name: "lime",
+  hue: 130.38,
   chroma: colorChromaColorful,
 };
 
@@ -78,6 +90,12 @@ const vampireThemeConfig: MinolithCssVariable = {
       colorLightnessOffsetLighter,
       colorLightnessOffsetDarker
     ),
+    coral: minolithThemeUtility.getColorVar(
+      colorCoral,
+      colorLightness50,
+      colorLightnessOffsetLighter,
+      colorLightnessOffsetDarker
+    ),
     orange: minolithThemeUtility.getColorVar(
       colorOrange,
       colorLightness50,
@@ -86,6 +104,12 @@ const vampireThemeConfig: MinolithCssVariable = {
     ),
     yellow: minolithThemeUtility.getColorVar(
       colorYellow,
+      colorLightness50,
+      colorLightnessOffsetLighter,
+      colorLightnessOffsetDarker
+    ),
+    lime: minolithThemeUtility.getColorVar(
+      colorLime,
       colorLightness50,
       colorLightnessOffsetLighter,
       colorLightnessOffsetDarker
