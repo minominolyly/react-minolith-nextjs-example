@@ -31,6 +31,9 @@ import {
   Ruby,
   Stripe,
   Section,
+  Dot,
+  Zigzag,
+  Rhombus,
 } from "react-minolith";
 
 const TITLE = "react-minolith-nextjs-example";
@@ -62,7 +65,9 @@ export default function Home() {
           <CurrentTheme />
         </Section>
         <Div spacing={{ padding: 1 }}>
-          <MinolithLink as={Link} href="/hello-world">{"Hello World"}</MinolithLink>
+          <MinolithLink as={Link} href="/hello-world">
+            {"Hello World"}
+          </MinolithLink>
         </Div>
         <Div spacing={{ padding: 1 }}>
           {
@@ -84,10 +89,16 @@ export default function Home() {
                     <Badge colorName="red">{"Badge"}</Badge>
                   </Column>
                   <Column>
+                    <Badge colorName="coral">{"Badge"}</Badge>
+                  </Column>
+                  <Column>
                     <Badge colorName="orange">{"Badge"}</Badge>
                   </Column>
                   <Column>
                     <Badge colorName="yellow">{"Badge"}</Badge>
+                  </Column>
+                  <Column>
+                    <Badge colorName="lime">{"Badge"}</Badge>
                   </Column>
                   <Column>
                     <Badge colorName="green">{"Badge"}</Badge>
@@ -124,10 +135,16 @@ export default function Home() {
                     <Button colorName="red">{"Button"}</Button>
                   </Column>
                   <Column>
+                    <Button colorName="coral">{"Button"}</Button>
+                  </Column>
+                  <Column>
                     <Button colorName="orange">{"Button"}</Button>
                   </Column>
                   <Column>
                     <Button colorName="yellow">{"Button"}</Button>
+                  </Column>
+                  <Column>
+                    <Button colorName="lime">{"Button"}</Button>
                   </Column>
                   <Column>
                     <Button colorName="green">{"Button"}</Button>
@@ -178,6 +195,17 @@ export default function Home() {
                 </Card>
               </Div>
               <Div spacing={{ padding: 1 }}>
+                <Card colorName="coral">
+                  <CardHeader>{"CardHeader"}</CardHeader>
+                  <CardBody>
+                    {
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    }
+                  </CardBody>
+                  <CardFooter>{"CardFooter"}</CardFooter>
+                </Card>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
                 <Card colorName="orange">
                   <CardHeader>{"CardHeader"}</CardHeader>
                   <CardBody>
@@ -190,6 +218,17 @@ export default function Home() {
               </Div>
               <Div spacing={{ padding: 1 }}>
                 <Card colorName="yellow">
+                  <CardHeader>{"CardHeader"}</CardHeader>
+                  <CardBody>
+                    {
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    }
+                  </CardBody>
+                  <CardFooter>{"CardFooter"}</CardFooter>
+                </Card>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Card colorName="lime">
                   <CardHeader>{"CardHeader"}</CardHeader>
                   <CardBody>
                     {
@@ -304,6 +343,26 @@ export default function Home() {
                 </Dialogue>
               </Div>
               <Div spacing={{ padding: 1 }}>
+                <Dialogue colorName="coral">
+                  <DialogueAvatarContainer>
+                    <DialogueAvatar
+                      src="https://minominolyly.github.io/minolith/images/avatar.png"
+                      alt="avatar"
+                    />
+                  </DialogueAvatarContainer>
+                  <DialogueContentContainer>
+                    <DialogueName>{"DialogueName"}</DialogueName>
+                    <DialogueMessage>
+                      <DialogueMessageInner>
+                        {
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        }
+                      </DialogueMessageInner>
+                    </DialogueMessage>
+                  </DialogueContentContainer>
+                </Dialogue>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
                 <Dialogue colorName="orange">
                   <DialogueAvatarContainer>
                     <DialogueAvatar
@@ -325,6 +384,26 @@ export default function Home() {
               </Div>
               <Div spacing={{ padding: 1 }}>
                 <Dialogue colorName="yellow">
+                  <DialogueAvatarContainer>
+                    <DialogueAvatar
+                      src="https://minominolyly.github.io/minolith/images/avatar.png"
+                      alt="avatar"
+                    />
+                  </DialogueAvatarContainer>
+                  <DialogueContentContainer>
+                    <DialogueName>{"DialogueName"}</DialogueName>
+                    <DialogueMessage>
+                      <DialogueMessageInner>
+                        {
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        }
+                      </DialogueMessageInner>
+                    </DialogueMessage>
+                  </DialogueContentContainer>
+                </Dialogue>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Dialogue colorName="lime">
                   <DialogueAvatarContainer>
                     <DialogueAvatar
                       src="https://minominolyly.github.io/minolith/images/avatar.png"
@@ -473,6 +552,16 @@ export default function Home() {
                 </Message>
               </Div>
               <Div spacing={{ padding: 1 }}>
+                <Message colorName="coral">
+                  <MessageHeader>{"Message"}</MessageHeader>
+                  <MessageBody>
+                    {
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    }
+                  </MessageBody>
+                </Message>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
                 <Message colorName="orange">
                   <MessageHeader>{"Message"}</MessageHeader>
                   <MessageBody>
@@ -484,6 +573,16 @@ export default function Home() {
               </Div>
               <Div spacing={{ padding: 1 }}>
                 <Message colorName="yellow">
+                  <MessageHeader>{"Message"}</MessageHeader>
+                  <MessageBody>
+                    {
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    }
+                  </MessageBody>
+                </Message>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Message colorName="lime">
                   <MessageHeader>{"Message"}</MessageHeader>
                   <MessageBody>
                     {
@@ -562,12 +661,22 @@ export default function Home() {
                 </Gingham>
               </Div>
               <Div spacing={{ padding: 1 }}>
+                <Gingham colorName="coral" sizing={{ aspectRatio: "16:9" }}>
+                  {"Gingham"}
+                </Gingham>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
                 <Gingham colorName="orange" sizing={{ aspectRatio: "16:9" }}>
                   {"Gingham"}
                 </Gingham>
               </Div>
               <Div spacing={{ padding: 1 }}>
                 <Gingham colorName="yellow" sizing={{ aspectRatio: "16:9" }}>
+                  {"Gingham"}
+                </Gingham>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Gingham colorName="lime" sizing={{ aspectRatio: "16:9" }}>
                   {"Gingham"}
                 </Gingham>
               </Div>
@@ -616,12 +725,22 @@ export default function Home() {
                 </Stripe>
               </Div>
               <Div spacing={{ padding: 1 }}>
+                <Stripe colorName="coral" sizing={{ aspectRatio: "16:9" }}>
+                  {"Stripe"}
+                </Stripe>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
                 <Stripe colorName="orange" sizing={{ aspectRatio: "16:9" }}>
                   {"Stripe"}
                 </Stripe>
               </Div>
               <Div spacing={{ padding: 1 }}>
                 <Stripe colorName="yellow" sizing={{ aspectRatio: "16:9" }}>
+                  {"Stripe"}
+                </Stripe>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Stripe colorName="lime" sizing={{ aspectRatio: "16:9" }}>
                   {"Stripe"}
                 </Stripe>
               </Div>
@@ -649,6 +768,198 @@ export default function Home() {
                 <Stripe colorName="magenta" sizing={{ aspectRatio: "16:9" }}>
                   {"Stripe"}
                 </Stripe>
+              </Div>
+            </AccordionDetails>
+          </Accordion>
+        </Div>
+        <Div spacing={{ padding: 1 }}>
+          <Accordion>
+            <AccordionSummary>
+              <Ruby rubyText="ドット">{"Dot"}</Ruby>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Div spacing={{ padding: 1 }}>
+                <Dot colorName="gray" sizing={{ aspectRatio: "16:9" }}>
+                  {"Dot"}
+                </Dot>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Dot colorName="red" sizing={{ aspectRatio: "16:9" }}>
+                  {"Dot"}
+                </Dot>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Dot colorName="coral" sizing={{ aspectRatio: "16:9" }}>
+                  {"Dot"}
+                </Dot>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Dot colorName="orange" sizing={{ aspectRatio: "16:9" }}>
+                  {"Dot"}
+                </Dot>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Dot colorName="yellow" sizing={{ aspectRatio: "16:9" }}>
+                  {"Dot"}
+                </Dot>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Dot colorName="lime" sizing={{ aspectRatio: "16:9" }}>
+                  {"Dot"}
+                </Dot>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Dot colorName="green" sizing={{ aspectRatio: "16:9" }}>
+                  {"Dot"}
+                </Dot>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Dot colorName="cyan" sizing={{ aspectRatio: "16:9" }}>
+                  {"Dot"}
+                </Dot>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Dot colorName="blue" sizing={{ aspectRatio: "16:9" }}>
+                  {"Dot"}
+                </Dot>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Dot colorName="violet" sizing={{ aspectRatio: "16:9" }}>
+                  {"Dot"}
+                </Dot>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Dot colorName="magenta" sizing={{ aspectRatio: "16:9" }}>
+                  {"Dot"}
+                </Dot>
+              </Div>
+            </AccordionDetails>
+          </Accordion>
+        </Div>
+        <Div spacing={{ padding: 1 }}>
+          <Accordion>
+            <AccordionSummary>
+              <Ruby rubyText="ジグザグ">{"Zigzag"}</Ruby>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Div spacing={{ padding: 1 }}>
+                <Zigzag colorName="gray" sizing={{ aspectRatio: "16:9" }}>
+                  {"Zigzag"}
+                </Zigzag>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Zigzag colorName="red" sizing={{ aspectRatio: "16:9" }}>
+                  {"Zigzag"}
+                </Zigzag>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Zigzag colorName="coral" sizing={{ aspectRatio: "16:9" }}>
+                  {"Zigzag"}
+                </Zigzag>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Zigzag colorName="orange" sizing={{ aspectRatio: "16:9" }}>
+                  {"Zigzag"}
+                </Zigzag>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Zigzag colorName="yellow" sizing={{ aspectRatio: "16:9" }}>
+                  {"Zigzag"}
+                </Zigzag>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Zigzag colorName="lime" sizing={{ aspectRatio: "16:9" }}>
+                  {"Zigzag"}
+                </Zigzag>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Zigzag colorName="green" sizing={{ aspectRatio: "16:9" }}>
+                  {"Zigzag"}
+                </Zigzag>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Zigzag colorName="cyan" sizing={{ aspectRatio: "16:9" }}>
+                  {"Zigzag"}
+                </Zigzag>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Zigzag colorName="blue" sizing={{ aspectRatio: "16:9" }}>
+                  {"Zigzag"}
+                </Zigzag>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Zigzag colorName="violet" sizing={{ aspectRatio: "16:9" }}>
+                  {"Zigzag"}
+                </Zigzag>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Zigzag colorName="magenta" sizing={{ aspectRatio: "16:9" }}>
+                  {"Zigzag"}
+                </Zigzag>
+              </Div>
+            </AccordionDetails>
+          </Accordion>
+        </Div>
+        <Div spacing={{ padding: 1 }}>
+          <Accordion>
+            <AccordionSummary>
+              <Ruby rubyText="ロンバス">{"Rhombus"}</Ruby>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Div spacing={{ padding: 1 }}>
+                <Rhombus colorName="gray" sizing={{ aspectRatio: "16:9" }}>
+                  {"Rhombus"}
+                </Rhombus>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Rhombus colorName="red" sizing={{ aspectRatio: "16:9" }}>
+                  {"Rhombus"}
+                </Rhombus>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Rhombus colorName="coral" sizing={{ aspectRatio: "16:9" }}>
+                  {"Rhombus"}
+                </Rhombus>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Rhombus colorName="orange" sizing={{ aspectRatio: "16:9" }}>
+                  {"Rhombus"}
+                </Rhombus>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Rhombus colorName="yellow" sizing={{ aspectRatio: "16:9" }}>
+                  {"Rhombus"}
+                </Rhombus>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Rhombus colorName="lime" sizing={{ aspectRatio: "16:9" }}>
+                  {"Rhombus"}
+                </Rhombus>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Rhombus colorName="green" sizing={{ aspectRatio: "16:9" }}>
+                  {"Rhombus"}
+                </Rhombus>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Rhombus colorName="cyan" sizing={{ aspectRatio: "16:9" }}>
+                  {"Rhombus"}
+                </Rhombus>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Rhombus colorName="blue" sizing={{ aspectRatio: "16:9" }}>
+                  {"Rhombus"}
+                </Rhombus>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Rhombus colorName="violet" sizing={{ aspectRatio: "16:9" }}>
+                  {"Rhombus"}
+                </Rhombus>
+              </Div>
+              <Div spacing={{ padding: 1 }}>
+                <Rhombus colorName="magenta" sizing={{ aspectRatio: "16:9" }}>
+                  {"Rhombus"}
+                </Rhombus>
               </Div>
             </AccordionDetails>
           </Accordion>

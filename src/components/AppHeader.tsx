@@ -1,5 +1,4 @@
 "use client";
-import ColorSchemeContext from "@/contexts/ColorSchemeContext";
 import ColorTheme from "@/types/ColorTheme";
 import { useContext, useState } from "react";
 import { FaBook, FaMoon, FaSun } from "react-icons/fa6";
@@ -8,8 +7,10 @@ import { LuCircleDashed } from "react-icons/lu";
 import {
   Button,
   ColorScheme,
+  Div,
   Hamburger,
   Header,
+  MinolithColorSchemeContext,
   Link as MinolithLink,
   Nav,
   NavAccordion,
@@ -22,11 +23,14 @@ import {
 } from "react-minolith";
 
 export default function AppHeader(props: AppHeaderProps) {
-  const colorScheme = useContext(ColorSchemeContext);
+  const colorScheme = useContext(MinolithColorSchemeContext);
   const [isMenuActive, setIsMenuActive] = useState(false);
   const navMenuItems = (
     <>
-      <NavMenuItem as={MinolithLink} onClick={() => props.changeTheme("default")}>
+      <NavMenuItem
+        as={MinolithLink}
+        onClick={() => props.changeTheme("default")}
+      >
         <LuCircleDashed />
         {"Change theme to Default"}
       </NavMenuItem>
@@ -48,6 +52,9 @@ export default function AppHeader(props: AppHeaderProps) {
       <NavMenuItem
         as={MinolithLink}
         onClick={() => props.changeTheme("nordic")}
+        emotionCss={{
+          fontSize: "5rem",
+        }}
       >
         <FaBook />
         {"Change theme to Nordic"}
@@ -80,17 +87,19 @@ export default function AppHeader(props: AppHeaderProps) {
             </NavBrandLeft>
             <NavBrandCenter>{"react-minolith Next.js example"}</NavBrandCenter>
             <NavBrandRight>
-              <Button
-                spacing={{ margin: 1 }}
-                colorName={colorScheme === "light" ? "orange" : "blue"}
-                onClick={() =>
-                  props.switchColorScheme(
-                    colorScheme === "light" ? "dark" : "light"
-                  )
-                }
-              >
-                {colorScheme === "light" ? <FaSun /> : <FaMoon />}
-              </Button>
+              <Div spacing={{ padding: { x: 0.5 } }}>
+                <Button
+                  spacing={{ margin: 1 }}
+                  colorName={colorScheme === "light" ? "orange" : "blue"}
+                  onClick={() =>
+                    props.switchColorScheme(
+                      colorScheme === "light" ? "dark" : "light"
+                    )
+                  }
+                >
+                  {colorScheme === "light" ? <FaSun /> : <FaMoon />}
+                </Button>
+              </Div>
             </NavBrandRight>
           </NavBrand>
           <NavMenu isActive={isMenuActive}>{navMenuItems}</NavMenu>

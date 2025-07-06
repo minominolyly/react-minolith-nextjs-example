@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 "use client";
 import AppHeader from "@/components/AppHeader";
-import ColorSchemeContext from "@/contexts/ColorSchemeContext";
 import ColorThemeContext from "@/contexts/ColorThemeContext";
 import defaultThemeConfig from "@/themes/default.theme";
 import nordicThemeConfig from "@/themes/nordic.theme";
@@ -18,7 +17,7 @@ import {
   Container,
   Footer,
   Main,
-  MinolithStatic,
+  Minolith,
   Span,
 } from "react-minolith";
 
@@ -56,84 +55,79 @@ export default function CommonLayout(props: CommonLayoutProps) {
   }, []);
 
   return (
-    <ColorSchemeContext.Provider value={colorScheme}>
-      <ColorThemeContext.Provider value={theme}>
-        <MinolithStatic
-          colorScheme={colorScheme}
-          cssVariableSetting={themeConfig}
-        >
-          <AppHeader
-            switchColorScheme={(colorScheme) => setColorScheme(colorScheme)}
-            changeTheme={(theme) => setTheme(theme)}
-          />
-          <Main>{props.children}</Main>
-          <Footer
-            back={{
-              color: {
-                light: {
-                  default: {
-                    name: "gray",
-                    lightness: 85,
-                  },
-                },
-                dark: {
-                  default: {
-                    name: "gray",
-                    lightness: 15,
-                  },
+    <ColorThemeContext.Provider value={theme}>
+      <Minolith colorScheme={colorScheme} cssVariableSetting={themeConfig}>
+        <AppHeader
+          switchColorScheme={(colorScheme) => setColorScheme(colorScheme)}
+          changeTheme={(theme) => setTheme(theme)}
+        />
+        <Main>{props.children}</Main>
+        <Footer
+          back={{
+            color: {
+              light: {
+                default: {
+                  name: "gray",
+                  lightness: 85,
                 },
               },
-            }}
-            spacing={{
-              padding: { y: 0.5 },
-            }}
-          >
-            <Container>
-              <Span
-                fore={{
-                  color: {
-                    light: {
-                      default: {
-                        name: "gray",
-                        lightness: 35,
-                      },
-                    },
-                    dark: {
-                      default: {
-                        name: "gray",
-                        lightness: 70,
-                      },
-                    },
-                  },
-                }}
-              >
-                <FaCopyright />
-              </Span>
-              <Span
-                fore={{
-                  color: {
-                    light: {
-                      default: {
-                        name: "gray",
-                        lightness: 35,
-                      },
-                    },
-                    dark: {
-                      default: {
-                        name: "gray",
-                        lightness: 70,
-                      },
+              dark: {
+                default: {
+                  name: "gray",
+                  lightness: 15,
+                },
+              },
+            },
+          }}
+          spacing={{
+            padding: { y: 0.5 },
+          }}
+        >
+          <Container>
+            <Span
+              fore={{
+                color: {
+                  light: {
+                    default: {
+                      name: "gray",
+                      lightness: 35,
                     },
                   },
-                }}
-              >
-                {"minominolyly"}
-              </Span>
-            </Container>
-          </Footer>
-        </MinolithStatic>
-      </ColorThemeContext.Provider>
-    </ColorSchemeContext.Provider>
+                  dark: {
+                    default: {
+                      name: "gray",
+                      lightness: 70,
+                    },
+                  },
+                },
+              }}
+            >
+              <FaCopyright />
+            </Span>
+            <Span
+              fore={{
+                color: {
+                  light: {
+                    default: {
+                      name: "gray",
+                      lightness: 35,
+                    },
+                  },
+                  dark: {
+                    default: {
+                      name: "gray",
+                      lightness: 70,
+                    },
+                  },
+                },
+              }}
+            >
+              {"minominolyly"}
+            </Span>
+          </Container>
+        </Footer>
+      </Minolith>
+    </ColorThemeContext.Provider>
   );
 }
 
