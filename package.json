@@ -23,7 +23,7 @@
     "@types/react-dom": "^19",
     "eslint": "^10",
     "eslint-config-next": "16.1.6",
-    "react-minolith": "^2.0.4",
+    "react-minolith": "^2.0.5",
     "sass": "^1.97.3",
     "typescript": "^5"
   }
