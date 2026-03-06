@@ -1,7 +1,7 @@
 "use client";
 import ColorInfo from "@/models/ColorInfo";
 import minolithThemeUtility from "@/utilities/minolithThemeUtility";
-import { MinolithCssVariable } from "react-minolith";
+import { MinolithCssVariables } from "react-minolith";
 
 const colorChromaGray = 0.05;
 const colorChromaColorful = 0.2;
@@ -80,7 +80,7 @@ const colorMagenta: ColorInfo = {
 const defaultForeLight = "#002b36";
 const defaultForeDark = "#fdf6e3";
 
-const solarThemeConfig: MinolithCssVariable = {
+const solarThemeConfig: MinolithCssVariables = {
   color: {
     gray: minolithThemeUtility.getColorVar(
       colorGray,
@@ -148,118 +148,22 @@ const solarThemeConfig: MinolithCssVariable = {
       colorLightnessOffsetLighter,
       colorLightnessOffsetDarker
     ),
-    light: {
+    colorScheme: {
       default: {
         default: {
-          fore: defaultForeLight,
-          back: defaultForeDark,
+          fore: {
+            light: defaultForeLight,
+            dark: defaultForeDark,
+          },
         },
       },
       components: {
         accordion: {
           default: {
             default: {
-              fore: defaultForeLight,
-            },
-          },
-        },
-        card: {
-          default: {
-            default: {
-              fore: defaultForeLight,
-            },
-          },
-          cardHeader: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-          cardBody: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-          cardFooter: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-        },
-        dialogue: {
-          default: {
-            default: {
-              fore: defaultForeLight,
-            },
-          },
-          dialogueName: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-          dialogueMessage: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-        },
-        message: {
-          default: {
-            default: {
-              fore: defaultForeLight,
-            },
-          },
-          messageHeader: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-          messageBody: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-        },
-      },
-    },
-    dark: {
-      default: {
-        default: {
-          fore: defaultForeDark,
-          back: defaultForeLight,
-        },
-      },
-      components: {
-        accordion: {
-          default: {
-            default: {
-              fore: defaultForeDark,
-            },
-          },
-          accordionSummary: {
-            default: {
-              default: {
-                fore: defaultForeDark,
-              },
-            },
-          },
-          accordionDetails: {
-            default: {
-              default: {
-                fore: defaultForeDark,
+              fore: {
+                light: defaultForeLight,
+                dark: defaultForeDark,
               },
             },
           },
@@ -267,27 +171,39 @@ const solarThemeConfig: MinolithCssVariable = {
         card: {
           default: {
             default: {
-              fore: defaultForeDark,
+              fore: {
+                light: defaultForeLight,
+                dark: defaultForeDark,
+              },
             },
           },
           cardHeader: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },
           cardBody: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },
           cardFooter: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },
@@ -295,20 +211,29 @@ const solarThemeConfig: MinolithCssVariable = {
         dialogue: {
           default: {
             default: {
-              fore: defaultForeDark,
+              fore: {
+                light: defaultForeLight,
+                dark: defaultForeDark,
+              },
             },
           },
           dialogueName: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },
           dialogueMessage: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },
@@ -316,20 +241,29 @@ const solarThemeConfig: MinolithCssVariable = {
         message: {
           default: {
             default: {
-              fore: defaultForeDark,
+              fore: {
+                light: defaultForeLight,
+                dark: defaultForeDark,
+              },
             },
           },
           messageHeader: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },
           messageBody: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },

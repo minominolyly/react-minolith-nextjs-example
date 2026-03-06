@@ -1,9 +1,7 @@
 "use client";
 import ColorThemeContext from "@/contexts/ColorThemeContext";
-import Link from "next/link";
 import { useContext } from "react";
 import {
-  Link as MinolithLink,
   Message,
   MessageBody,
   MessageHeader,
@@ -11,6 +9,7 @@ import {
   Ruby,
   Span,
 } from "react-minolith";
+import MinolithLink from "./MinolithLink";
 
 export default function CurrentTheme() {
   const colorTheme = useContext(ColorThemeContext);
@@ -46,7 +45,6 @@ export default function CurrentTheme() {
       <Paragraph>
         {"Nordic theme is influenced by "}
         <MinolithLink
-          as={Link}
           href="https://www.nordtheme.com/"
           role="link"
           target="_blank"
@@ -60,7 +58,6 @@ export default function CurrentTheme() {
       <Paragraph>
         {"Solar theme is influenced by "}
         <MinolithLink
-          as={Link}
           href="https://ethanschoonover.com/solarized/"
           role="link"
           target="_blank"
@@ -74,7 +71,6 @@ export default function CurrentTheme() {
       <Paragraph>
         {"Primal theme is influenced by "}
         <MinolithLink
-          as={Link}
           href="https://primary-theme.github.io/"
           role="link"
           target="_blank"
@@ -88,7 +84,6 @@ export default function CurrentTheme() {
       <Paragraph>
         {"Vampire theme is influenced by "}
         <MinolithLink
-          as={Link}
           href="https://draculatheme.com/"
           role="link"
           target="_blank"

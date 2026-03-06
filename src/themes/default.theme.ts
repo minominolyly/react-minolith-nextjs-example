@@ -1,8 +1,8 @@
 "use client";
 
-import { MinolithCssVariable } from "react-minolith";
+import { MinolithCssVariables } from "react-minolith";
 
-const defaultThemeConfig: MinolithCssVariable = {
+const defaultThemeConfig: MinolithCssVariables = {
   typography: {
     fontFamily: {
       main: "var(--font-family-noto-serif-jp)",

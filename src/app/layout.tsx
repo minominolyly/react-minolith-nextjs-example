@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { New_Tegomin, Noto_Serif_JP } from "next/font/google";
+import Registry from "./registry";
 
 const TITLE = "react-minolith-nextjs-example";
 const DESCRIPTION = "react-minolith Next.js example.";
@@ -35,7 +36,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${NotoSerifJp.variable} ${NewTegomin.variable}`}>
-        {children}
+        <Registry>
+          {children}
+        </Registry>
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 "use client";
 import ColorInfo from "@/models/ColorInfo";
 import minolithThemeUtility from "@/utilities/minolithThemeUtility";
-import { MinolithCssVariable } from "react-minolith";
+import { MinolithCssVariables } from "react-minolith";
 
 const colorChromaGray = 0.02;
 const colorChromaColorful = 0.12;
@@ -81,188 +81,98 @@ const colorMagenta: ColorInfo = {
   chroma: colorChromaColorful,
 };
 
-const nordicThemeConfig: MinolithCssVariable = {
+const nordicThemeConfig: MinolithCssVariables = {
   color: {
     gray: minolithThemeUtility.getColorVar(
       colorGray,
       colorLightness50,
       colorLightnessOffsetLighter,
-      colorLightnessOffsetDarker
+      colorLightnessOffsetDarker,
     ),
     red: minolithThemeUtility.getColorVar(
       colorRed,
       colorLightness50,
       colorLightnessOffsetLighter,
-      colorLightnessOffsetDarker
+      colorLightnessOffsetDarker,
     ),
     coral: minolithThemeUtility.getColorVar(
       colorCoral,
       colorLightness50,
       colorLightnessOffsetLighter,
-      colorLightnessOffsetDarker
+      colorLightnessOffsetDarker,
     ),
     orange: minolithThemeUtility.getColorVar(
       colorOrange,
       colorLightness50,
       colorLightnessOffsetLighter,
-      colorLightnessOffsetDarker
+      colorLightnessOffsetDarker,
     ),
     yellow: minolithThemeUtility.getColorVar(
       colorYellow,
       colorLightness50,
       colorLightnessOffsetLighter,
-      colorLightnessOffsetDarker
+      colorLightnessOffsetDarker,
     ),
     lime: minolithThemeUtility.getColorVar(
       colorLime,
       colorLightness50,
       colorLightnessOffsetLighter,
-      colorLightnessOffsetDarker
+      colorLightnessOffsetDarker,
     ),
     green: minolithThemeUtility.getColorVar(
       colorGreen,
       colorLightness50,
       colorLightnessOffsetLighter,
-      colorLightnessOffsetDarker
+      colorLightnessOffsetDarker,
     ),
     cyan: minolithThemeUtility.getColorVar(
       colorCyan,
       colorLightness50,
       colorLightnessOffsetLighter,
-      colorLightnessOffsetDarker
+      colorLightnessOffsetDarker,
     ),
     blue: minolithThemeUtility.getColorVar(
       colorBlue,
       colorLightness50,
       colorLightnessOffsetLighter,
-      colorLightnessOffsetDarker
+      colorLightnessOffsetDarker,
     ),
     violet: minolithThemeUtility.getColorVar(
       colorViolet,
       colorLightness50,
       colorLightnessOffsetLighter,
-      colorLightnessOffsetDarker
+      colorLightnessOffsetDarker,
     ),
     magenta: minolithThemeUtility.getColorVar(
       colorMagenta,
       colorLightness50,
       colorLightnessOffsetLighter,
-      colorLightnessOffsetDarker
+      colorLightnessOffsetDarker,
     ),
-    light: {
+    colorScheme: {
       default: {
         default: {
-          fore: defaultForeLight,
-          back: defaultBackLight,
+          fore: {
+            light: defaultForeLight,
+            dark: defaultForeDark,
+          },
+          back: {
+            light: defaultBackLight,
+            dark: defaultBackDark,
+          },
         },
       },
       components: {
         accordion: {
           default: {
             default: {
-              fore: defaultForeLight,
-              back: defaultBackLight,
-            },
-          },
-        },
-        card: {
-          default: {
-            default: {
-              fore: defaultForeLight,
-            },
-          },
-          cardHeader: {
-            default: {
-              default: {
-                fore: defaultForeLight,
+              fore: {
+                light: defaultForeLight,
+                dark: defaultForeDark,
               },
-            },
-          },
-          cardBody: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-          cardFooter: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-        },
-        dialogue: {
-          default: {
-            default: {
-              fore: defaultForeLight,
-            },
-          },
-          dialogueName: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-          dialogueMessage: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-        },
-        message: {
-          default: {
-            default: {
-              fore: defaultForeLight,
-            },
-          },
-          messageHeader: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-          messageBody: {
-            default: {
-              default: {
-                fore: defaultForeLight,
-              },
-            },
-          },
-        },
-      },
-    },
-    dark: {
-      default: {
-        default: {
-          fore: defaultForeDark,
-          back: defaultBackDark,
-        },
-      },
-      components: {
-        accordion: {
-          default: {
-            default: {
-              fore: defaultForeDark,
-              back: defaultBackDark,
-            },
-          },
-          accordionSummary: {
-            default: {
-              default: {
-                fore: defaultForeDark,
-              },
-            },
-          },
-          accordionDetails: {
-            default: {
-              default: {
-                fore: defaultForeDark,
+              back: {
+                light: defaultBackLight,
+                dark: defaultBackDark,
               },
             },
           },
@@ -270,27 +180,39 @@ const nordicThemeConfig: MinolithCssVariable = {
         card: {
           default: {
             default: {
-              fore: defaultForeDark,
+              fore: {
+                light: defaultForeLight,
+                dark: defaultForeDark,
+              },
             },
           },
           cardHeader: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },
           cardBody: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },
           cardFooter: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },
@@ -298,20 +220,29 @@ const nordicThemeConfig: MinolithCssVariable = {
         dialogue: {
           default: {
             default: {
-              fore: defaultForeDark,
+              fore: {
+                light: defaultForeLight,
+                dark: defaultForeDark,
+              },
             },
           },
           dialogueName: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },
           dialogueMessage: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },
@@ -319,20 +250,29 @@ const nordicThemeConfig: MinolithCssVariable = {
         message: {
           default: {
             default: {
-              fore: defaultForeDark,
+              fore: {
+                light: defaultForeLight,
+                dark: defaultForeDark,
+              },
             },
           },
           messageHeader: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },
           messageBody: {
             default: {
               default: {
-                fore: defaultForeDark,
+                fore: {
+                  light: defaultForeLight,
+                  dark: defaultForeDark,
+                },
               },
             },
           },

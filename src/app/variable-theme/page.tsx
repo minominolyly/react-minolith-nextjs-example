@@ -1,78 +1,51 @@
-import CurrentTheme from "@/components/CurrentTheme";
-import MinolithLink from "@/components/MinolithLink";
-import CommonLayout from "@/layouts/CommonLayout";
+import { VariableThemeLayout } from "@/layouts/VariableThemeLayout";
 import { Metadata } from "next";
 import {
+  Container,
+  Section,
+  Div,
   Accordion,
-  AccordionDetails,
   AccordionSummary,
+  Ruby,
+  AccordionDetails,
+  Columns,
+  Column,
   Badge,
   Button,
   Card,
+  CardHeader,
   CardBody,
   CardFooter,
-  CardHeader,
-  Column,
-  Columns,
-  Container,
   Dialogue,
-  DialogueAvatar,
   DialogueAvatarContainer,
+  DialogueAvatar,
   DialogueContentContainer,
+  DialogueName,
   DialogueMessage,
   DialogueMessageInner,
-  DialogueName,
-  Div,
-  Gingham,
   Message,
-  MessageBody,
   MessageHeader,
-  Ruby,
+  MessageBody,
+  Gingham,
   Stripe,
-  Section,
   Dot,
   Zigzag,
   Rhombus,
+  Input,
 } from "react-minolith";
 
-const TITLE = "react-minolith-nextjs-example";
-const DESCRIPTION = "react-minolith Next.js example.";
+const TITLE = "Variable theme";
+const DESCRIPTION = "Variable theme";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  openGraph: {
-    siteName: "react-minolith-nextjs-example",
-    title: TITLE,
-    description: DESCRIPTION,
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    creator: "@minominolyly",
-    site: "@minominolyly",
-    title: TITLE,
-    description: DESCRIPTION,
-  },
 };
 
-export default function Home() {
+export default function VariableThemePage() {
   return (
-    <CommonLayout>
+    <VariableThemeLayout>
       <Container>
-        <Section spacing={{ padding: 1 }}>
-          <CurrentTheme />
-        </Section>
-        <Div spacing={{ padding: 1 }}>
-          <MinolithLink href="/hello-world">
-            {"Hello World"}
-          </MinolithLink>
-        </Div>
-        <Div spacing={{ padding: 1 }}>
-          <MinolithLink href="/variable-theme">
-            {"Variable theme"}
-          </MinolithLink>
-        </Div>
         <Div spacing={{ padding: 1 }}>
           {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -969,6 +942,6 @@ export default function Home() {
           </Accordion>
         </Div>
       </Container>
-    </CommonLayout>
+    </VariableThemeLayout>
   );
 }

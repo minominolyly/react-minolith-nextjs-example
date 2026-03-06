@@ -1,7 +1,7 @@
 "use client";
 import ColorInfo from "@/models/ColorInfo";
 import minolithThemeUtility from "@/utilities/minolithThemeUtility";
-import { MinolithCssVariable } from "react-minolith";
+import { MinolithCssVariables } from "react-minolith";
 
 const colorChromaGray = 0.02;
 const colorChromaColorful = 0.18;
@@ -76,7 +76,7 @@ const colorMagenta: ColorInfo = {
   chroma: colorChromaColorful,
 };
 
-const vampireThemeConfig: MinolithCssVariable = {
+const vampireThemeConfig: MinolithCssVariables = {
   color: {
     gray: minolithThemeUtility.getColorVar(
       colorGray,

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 "use client";
+
 import AppHeader from "@/components/AppHeader";
 import ColorThemeContext from "@/contexts/ColorThemeContext";
 import defaultThemeConfig from "@/themes/default.theme";
@@ -10,7 +11,7 @@ import vampireThemeConfig from "@/themes/vampire.theme";
 import wairoThemeConfig from "@/themes/wairo.theme";
 import ColorTheme from "@/types/ColorTheme";
 import localStorageUtility from "@/utilities/localStorageUtility";
-import { PropsWithChildren, useEffect, useState } from "react";
+import { PropsWithChildren, useLayoutEffect, useState } from "react";
 import { FaCopyright } from "react-icons/fa6";
 import {
   ColorScheme,
@@ -18,115 +19,134 @@ import {
   Footer,
   Main,
   Minolith,
+  MinolithClientCustomCssVariablesProvider,
   Span,
 } from "react-minolith";
 
 export default function CommonLayout(props: CommonLayoutProps) {
-  const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
+  const [colorScheme, setColorScheme] = useState<ColorScheme | undefined>(
+    undefined,
+  );
   const [theme, setTheme] = useState<ColorTheme>("default");
 
   const themeConfig =
     theme === "vampire"
       ? vampireThemeConfig
       : theme === "solar"
-      ? solarThemeConfig
-      : theme === "primal"
-      ? primalThemeConfig
-      : theme === "nordic"
-      ? nordicThemeConfig
-      : theme === "wairo"
-      ? wairoThemeConfig
-      : defaultThemeConfig;
+        ? solarThemeConfig
+        : theme === "primal"
+          ? primalThemeConfig
+          : theme === "nordic"
+            ? nordicThemeConfig
+            : theme === "wairo"
+              ? wairoThemeConfig
+              : defaultThemeConfig;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const selectedColorScheme =
       localStorageUtility.getData<ColorScheme>("colorScheme");
 
+    if (selectedColorScheme) {
+      setColorScheme(selectedColorScheme);
+      return;
+    }
+
     let preferdColorScheme: "light" | "dark" = "light";
-    if (selectedColorScheme === undefined && typeof window !== "undefined") {
+    if (typeof window !== "undefined") {
       const isDark =
         window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches;
 
       preferdColorScheme = isDark ? "dark" : "light";
 
+      setColorScheme(preferdColorScheme);
       localStorageUtility.setData<string>("colorScheme", preferdColorScheme);
     }
   }, []);
 
   return (
     <ColorThemeContext.Provider value={theme}>
-      <Minolith colorScheme={colorScheme} cssVariableSetting={themeConfig}>
-        <AppHeader
-          switchColorScheme={(colorScheme) => setColorScheme(colorScheme)}
-          changeTheme={(theme) => setTheme(theme)}
-        />
-        <Main>{props.children}</Main>
-        <Footer
-          back={{
-            color: {
-              light: {
-                default: {
-                  name: "gray",
-                  lightness: 85,
-                },
-              },
-              dark: {
-                default: {
-                  name: "gray",
-                  lightness: 15,
-                },
-              },
-            },
-          }}
-          spacing={{
-            padding: { y: 0.5 },
-          }}
-        >
-          <Container>
-            <Span
-              fore={{
-                color: {
+      <MinolithClientCustomCssVariablesProvider
+        minolithCssVariables={themeConfig}
+      >
+        <Minolith colorScheme={colorScheme}>
+          <AppHeader
+            switchColorScheme={(colorScheme) => setColorScheme(colorScheme)}
+            changeTheme={(theme) => setTheme(theme)}
+          />
+          <Main>{props.children}</Main>
+          <Footer
+            back={{
+              color: {
+                colorScheme: {
                   light: {
                     default: {
                       name: "gray",
-                      lightness: 35,
+                      lightness: 85,
                     },
                   },
                   dark: {
                     default: {
                       name: "gray",
-                      lightness: 70,
+                      lightness: 15,
                     },
                   },
                 },
-              }}
-            >
-              <FaCopyright />
-            </Span>
-            <Span
-              fore={{
-                color: {
-                  light: {
-                    default: {
-                      name: "gray",
-                      lightness: 35,
+              },
+            }}
+            spacing={{
+              padding: { y: 0.5 },
+            }}
+          >
+            <Container>
+              <Span
+                fore={{
+                  color: {
+                    colorScheme: {
+                      light: {
+                        default: {
+                          name: "gray",
+                          lightness: 35,
+                        },
+                      },
+                      dark: {
+                        default: {
+                          name: "gray",
+                          lightness: 70,
+                        },
+                      },
                     },
                   },
-                  dark: {
-                    default: {
-                      name: "gray",
-                      lightness: 70,
+                }}
+              >
+                <FaCopyright />
+              </Span>
+              <Span
+                fore={{
+                  color: {
+                    colorScheme: {
+                      light: {
+                        default: {
+                          name: "gray",
+                          lightness: 35,
+                        },
+                      },
+                      dark: {
+                        default: {
+                          name: "gray",
+                          lightness: 70,
+                        },
+                      },
                     },
                   },
-                },
-              }}
-            >
-              {"minominolyly"}
-            </Span>
-          </Container>
-        </Footer>
-      </Minolith>
+                }}
+              >
+                {"minominolyly"}
+              </Span>
+            </Container>
+          </Footer>
+        </Minolith>
+      </MinolithClientCustomCssVariablesProvider>
     </ColorThemeContext.Provider>
   );
 }

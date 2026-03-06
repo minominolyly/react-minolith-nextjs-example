@@ -10,6 +10,7 @@ import {
   Div,
   Hamburger,
   Header,
+  Input,
   MinolithColorSchemeContext,
   Link as MinolithLink,
   Nav,
@@ -25,35 +26,59 @@ import {
 export default function AppHeader(props: AppHeaderProps) {
   const colorScheme = useContext(MinolithColorSchemeContext);
   const [isMenuActive, setIsMenuActive] = useState(false);
-  const navMenuItems = (
+
+  const navMenuItems = props.changeTheme ? (
     <>
       <NavMenuItem
         as={MinolithLink}
-        onClick={() => props.changeTheme("default")}
+        onClick={() => {
+          if (props.changeTheme) {
+            props.changeTheme("default");
+          }
+        }}
       >
         <LuCircleDashed />
         {"Change theme to Default"}
       </NavMenuItem>
-      <NavMenuItem as={MinolithLink} onClick={() => props.changeTheme("wairo")}>
+      <NavMenuItem
+        as={MinolithLink}
+        onClick={() => {
+          if (props.changeTheme) {
+            props.changeTheme("wairo");
+          }
+        }}
+      >
         <GiJapan />
         {"Change theme to Wairo"}
       </NavMenuItem>
-      <NavMenuItem as={MinolithLink} onClick={() => props.changeTheme("solar")}>
+      <NavMenuItem
+        as={MinolithLink}
+        onClick={() => {
+          if (props.changeTheme) {
+            props.changeTheme("solar");
+          }
+        }}
+      >
         <GiYinYang />
         {"Change theme to Solar"}
       </NavMenuItem>
       <NavMenuItem
         as={MinolithLink}
-        onClick={() => props.changeTheme("primal")}
+        onClick={() => {
+          if (props.changeTheme) {
+            props.changeTheme("primal");
+          }
+        }}
       >
         <FaBook />
         {"Change theme to Primal"}
       </NavMenuItem>
       <NavMenuItem
         as={MinolithLink}
-        onClick={() => props.changeTheme("nordic")}
-        emotionCss={{
-          fontSize: "5rem",
+        onClick={() => {
+          if (props.changeTheme) {
+            props.changeTheme("nordic");
+          }
         }}
       >
         <FaBook />
@@ -61,12 +86,18 @@ export default function AppHeader(props: AppHeaderProps) {
       </NavMenuItem>
       <NavMenuItem
         as={MinolithLink}
-        onClick={() => props.changeTheme("vampire")}
+        onClick={() => {
+          if (props.changeTheme) {
+            props.changeTheme("vampire");
+          }
+        }}
       >
         <GiVampireDracula />
         {"Change theme to Vampire"}
       </NavMenuItem>
     </>
+  ) : (
+    <></>
   );
 
   return (
@@ -93,7 +124,7 @@ export default function AppHeader(props: AppHeaderProps) {
                   colorName={colorScheme === "light" ? "orange" : "blue"}
                   onClick={() =>
                     props.switchColorScheme(
-                      colorScheme === "light" ? "dark" : "light"
+                      colorScheme === "light" ? "dark" : "light",
                     )
                   }
                 >
@@ -111,5 +142,5 @@ export default function AppHeader(props: AppHeaderProps) {
 
 interface AppHeaderProps {
   switchColorScheme: (colorScheme: ColorScheme) => void;
-  changeTheme: (theme: ColorTheme) => void;
+  changeTheme?: (theme: ColorTheme) => void;
 }
